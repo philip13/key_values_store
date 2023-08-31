@@ -26,6 +26,9 @@ kvs.get('a') -> 20
 ## How run the test
 `$ rake test`
 
+### Star from Zero
+> You can start from Zero if want to resolve just switch to branch 'step-0'
+
 ### My notes:
 ```ruby
 @key_values = {
