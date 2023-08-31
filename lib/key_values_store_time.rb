@@ -6,9 +6,10 @@ class KeyValuesStoreTime
   end
 
   def add(key, value, c_time= nil)
+    c_time ||= Time.now.strftime("%l:%M:%S %p")
+
     if @key_values[key].nil?
       @key_values[key] = {}
-      c_time ||= Time.now.strftime("%I:%m %p")
       @key_values[key][c_time] = value
     else
       @key_values[key][c_time] = value
