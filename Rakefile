@@ -1,9 +1,8 @@
-task default: %w[test]
+require 'rake/testtask'
 
-task :run do
-  ruby "lib/*.rb"
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList['test/**/*_test.rb']
 end
-
-task :test do
-  ruby "test/*_test.rb"
-end
+task :default => :test
